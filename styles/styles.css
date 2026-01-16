@@ -2,87 +2,97 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
 }
 
 body {
-    margin: 0;
     min-height: 100vh;
-    font-family: Roboto, sans-serif;
+    background: #d37fbd;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.wrapper {
-    background: #c7b7a0;
-}
-
+/* Calculator shell */
 .calculator {
     display: flex;
     flex-direction: column;
+    width: min(360px, 100vw);
+    aspect-ratio: 9 / 16;
+    padding: 1rem;
+    border-radius: 20px;
+    border: 1px solid black;
 }
 
+/* Display */
 .top-bar {
+    flex: 1;
+    color: #ffffff;
+    font-size: clamp(2.5rem, 6vw, 4rem);
     justify-content: space-evenly;
     background: #364449;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 1rem;    
 }
 
-.top-bar p {
-    color: #ffffff;
-    font-weight:900;
-    padding: 0 10px;
-}
-
-.top-bar p {
-    text-align: end;
-}
-
+/* buttons */
 .buttons {
+    flex: 4;
     display: flex;
 }
 
 button {
     border-radius: 0;
     border: 1px solid #7793a6;
+    margin: 0;
+    padding: 10px;
 }
 
-.operator-button {
+.col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.btn {
+    flex: 1;
+    border: 1px solid; #7793a6;
+    font-size: clamp(1.2rem, 3vc, 1.8rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* colors */
+
+.op {
     background: #c1cdd5;
 }
 
-.number-button {
+.num {
     background: #eeeeee;
 }
 
-.calculate-button {
+.calc {
     background: #ff5f6c;
 }
 
 .col-one {
+    flex: 1 1 0;
     display: flex;
     flex-direction: column;
 }
 
-.col-two {
-    display: flex;
-    flex-direction: column;
+.calc {
+    flex: 4;
 }
 
-.col-three {
-    display: flex;
-    flex-direction: column;
-}
-
-.col-four {
-    display: flex;
-    flex-direction: column;
-
-}
-
-.col-four#divide {
-    flex: 1 0 0;
-}
-
-.col-four#calculate {
-    flex: 4 0 0; 
+.btn:active {
+    filter: brightness(1.2);
 }
