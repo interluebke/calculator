@@ -24,6 +24,13 @@ body {
 
 .top-bar {
     justify-content: space-evenly;
+    background: #364449;
+}
+
+.top-bar p {
+    color: #ffffff;
+    font-weight:900;
+    padding: 0 10px;
 }
 
 .top-bar p {
@@ -32,6 +39,23 @@ body {
 
 .buttons {
     display: flex;
+}
+
+button {
+    border-radius: 0;
+    border: 1px solid #7793a6;
+}
+
+.operator-button {
+    background: #c1cdd5;
+}
+
+.number-button {
+    background: #eeeeee;
+}
+
+.calculate-button {
+    background: #ff5f6c;
 }
 
 .col-one {
@@ -52,4 +76,13 @@ body {
 .col-four {
     display: flex;
     flex-direction: column;
+
+}
+
+.col-four#divide {
+    flex: 1 0 0;
+}
+
+.col-four#calculate {
+    flex: 4 0 0; 
 }
