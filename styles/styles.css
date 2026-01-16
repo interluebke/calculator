@@ -83,12 +83,6 @@ button {
     background: #ff5f6c;
 }
 
-.col-one {
-    flex: 1 1 0;
-    display: flex;
-    flex-direction: column;
-}
-
 .calc {
     flex: 4;
 }
