@@ -4,21 +4,36 @@ const display = document.getElementById("display");
 let num1;
 let operator;
 let num2;
+let result = false;
 
-function resetCalculator() {
-    num1 = undefined;
-    operator = undefined;
-    num2 = undefined;
-    display.textContent = "0";
+function resetCalculator(n1) {
+    if (result) {
+        num1 = n1;
+        operator = undefined;
+        num2 = undefined;
+        result = false;
+        display.textContent = n1;
+    } else {
+        num1 = undefined;
+        operator = undefined;
+        num2 = undefined;
+        result = false;
+        display.textContent = "0"
+    }
 }
 
 buttons.forEach((button) => {
 button.addEventListener("click", () => {
-    if(button.id === "clear") {
+    if (result && !isNaN(Number(button.id))) {
+        resetCalculator(button.id);
+    }
+    else if(button.id === "clear") {
+        result = false;
         resetCalculator();
         return;
     }else if (button.id === "calculate") {
         display.textContent = calculate(num1, operator, num2);
+        result = true;
         return;
     } else if (button.className === "btn op") {
         if (operator) {
