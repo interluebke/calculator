@@ -22,10 +22,8 @@ button.addEventListener("click", () => {
         return;
     } else if (button.className === "btn op") {
         if (operator) {
-            /*const result = calculate(num1, operator, num2);
-            num1 = result.toString();
-            display.textContent = result;*/
             num1 = display.textContent = calculate(num1, operator, num2);
+            num2 = undefined;
             operator = button.id;
             console.log(num1);
         } else {
