@@ -97,7 +97,11 @@ function calculate(n1, op, n2) {
             case "multiply":
                 return Number(n1) * Number(n2);
             case "divide":
-                return Number(n1) / Number(n2);
+                if (Number(n2) === 0) {
+                    return "ERROR DIV/0!";
+                } else {
+                    return Number(n1) / Number(n2);
+                }
         };
     };  
 };
