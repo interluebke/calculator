@@ -1,4 +1,6 @@
-const buttons = document.querySelectorAll("button")
+const buttons = document.querySelectorAll("button");
+const top = document.getElementById("display");
+
 
 function calculator() {
     let num1;
