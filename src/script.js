@@ -21,9 +21,15 @@ button.addEventListener("click", () => {
         display.textContent = calculate(num1, operator, num2).toString();
         return;
     } else if (button.className === "btn op") {
-        operator = button.id;
-        display.textContent += ` ${getOperatorSign(operator)} `;
-        return;
+        if (operator) {
+            num1 = display.textContent = calculate(num1, operator, num2);
+            operator = button.id;
+            console.log(num1);
+        } else {
+            operator = button.id;
+            display.textContent += ` ${getOperatorSign(operator)} `;
+            return;
+        }
     } else if (operator === undefined) {
         num1 = appendNumbers(button.id, num1);
     } else {
