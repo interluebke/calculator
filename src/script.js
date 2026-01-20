@@ -1,26 +1,39 @@
 const buttons = document.querySelectorAll("button")
 
 function calculator() {
-    let num1 = 1;
+    let num1;
     let operator;
-    let num2 = 2;
+    let num2;
 
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
-            alert(typeof(button.id));
-            alert(calculate(num1, button.id, num2));
+            if (button.id === "calculate") {
+                alert(calculate(num1, operator, num2));
+            } else if (button.className === "btn op") {
+                operator = button.id;
+            } else if (operator === undefined) {
+                num1 = appendNumbers(button.id, num1);
+            } else {
+                num2 = appendNumbers(button.id, num2);
+            };
         });
     });
 };
 
 
 
-function appendNumbers(id) {
-    if (operator === undefined) {
-        if(isNaN(Number(id))) {
-
-        } else {alert(id);};
-    };
+function appendNumbers(id, n) {
+    if (!isNaN(Number(id))) {
+        if (n === undefined) {
+            n = id;
+            return n;
+        } else {
+            n += id;
+            return n;
+        }
+    } else {
+    alert("Error!");
+    }
 };
 
 function calculate(n1, op, n2) {
@@ -30,13 +43,13 @@ function calculate(n1, op, n2) {
     } else {
         switch(op) {
             case "add":
-                return n1 + n2;
+                return Number(n1) + Number(n2);
             case "subtract":
-                return n1 - n2;
+                return Number(n1) - Number(n2);
             case "multiply":
-                return n1 * n2;
+                return Number(n1) * Number(n2);
             case "divide":
-                return n1 / n2;
+                return Number(n1) / Number(n2);
         };
     };  
 };
