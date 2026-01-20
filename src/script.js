@@ -1,6 +1,6 @@
 const buttons = document.querySelectorAll("button");
-const top = document.getElementById("display");
-
+const display = document.getElementById("display");
+display.textContent = "0";
 
 function calculator() {
     let num1;
@@ -10,9 +10,10 @@ function calculator() {
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
             if (button.id === "calculate") {
-                alert(calculate(num1, operator, num2));
+                display.textContent = calculate(num1, operator, num2).toString();
             } else if (button.className === "btn op") {
                 operator = button.id;
+                display.textContent = "0";
             } else if (operator === undefined) {
                 num1 = appendNumbers(button.id, num1);
             } else {
@@ -28,9 +29,11 @@ function appendNumbers(id, n) {
     if (!isNaN(Number(id))) {
         if (n === undefined) {
             n = id;
+            display.textContent = n;
             return n;
         } else {
             n += id;
+            display.textContent = n;
             return n;
         }
     } else {
