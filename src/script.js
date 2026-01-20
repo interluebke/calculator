@@ -13,7 +13,7 @@ function calculator() {
                 display.textContent = calculate(num1, operator, num2).toString();
             } else if (button.className === "btn op") {
                 operator = button.id;
-                display.textContent += ` ${operator} `;
+                display.textContent += ` ${getOperatorSign(operator)} `;
             } else if (operator === undefined) {
                 num1 = appendNumbers(button.id, num1);
             } else {
