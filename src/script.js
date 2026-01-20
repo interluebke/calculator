@@ -9,7 +9,9 @@ function calculator() {
 
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
-            if (button.id === "calculate") {
+            if(button.id === "clear") {
+                calculator();
+            }else if (button.id === "calculate") {
                 display.textContent = calculate(num1, operator, num2).toString();
             } else if (button.className === "btn op") {
                 operator = button.id;
