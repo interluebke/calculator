@@ -1,29 +1,36 @@
 const buttons = document.querySelectorAll("button");
 const display = document.getElementById("display");
 
-function calculator() {
-    let num1;
-    let operator;
-    let num2;
-    display.textContent = "0";
+let num1;
+let operator;
+let num2;
 
-    buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-            if(button.id === "clear") {
-                calculator();
-            }else if (button.id === "calculate") {
-                display.textContent = calculate(num1, operator, num2).toString();
-            } else if (button.className === "btn op") {
-                operator = button.id;
-                display.textContent += ` ${getOperatorSign(operator)} `;
-            } else if (operator === undefined) {
-                num1 = appendNumbers(button.id, num1);
-            } else {
-                num2 = appendNumbers(button.id, num2);
-            };
+function resetCalculator() {
+    num1 = undefined;
+    operator = undefined;
+    num2 = undefined;
+    display.textContent = "0";
+}
+
+buttons.forEach((button) => {
+button.addEventListener("click", () => {
+    if(button.id === "clear") {
+        resetCalculator();
+        return;
+    }else if (button.id === "calculate") {
+        display.textContent = calculate(num1, operator, num2).toString();
+        return;
+    } else if (button.className === "btn op") {
+        operator = button.id;
+        display.textContent += ` ${getOperatorSign(operator)} `;
+        return;
+    } else if (operator === undefined) {
+        num1 = appendNumbers(button.id, num1);
+    } else {
+        num2 = appendNumbers(button.id, num2);
+    };
         });
     });
-};
 
 function getOperatorSign (operator) {
     switch(operator) {
@@ -72,4 +79,4 @@ function calculate(n1, op, n2) {
     };  
 };
 
-calculator();
+resetCalculator();
