@@ -1,11 +1,11 @@
 const buttons = document.querySelectorAll("button");
 const display = document.getElementById("display");
-display.textContent = "0";
 
 function calculator() {
     let num1;
     let operator;
     let num2;
+    display.textContent = "0";
 
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
