@@ -18,10 +18,13 @@ button.addEventListener("click", () => {
         resetCalculator();
         return;
     }else if (button.id === "calculate") {
-        display.textContent = calculate(num1, operator, num2).toString();
+        display.textContent = calculate(num1, operator, num2);
         return;
     } else if (button.className === "btn op") {
         if (operator) {
+            /*const result = calculate(num1, operator, num2);
+            num1 = result.toString();
+            display.textContent = result;*/
             num1 = display.textContent = calculate(num1, operator, num2);
             operator = button.id;
             console.log(num1);
@@ -69,8 +72,9 @@ function appendNumbers(id, n) {
 
 function calculate(n1, op, n2) {
     if (n1 === undefined || n2 == undefined) {
-        alert("Invalid Operation!");
-        calculator();
+        display.textContent = "Invalid Operation!";
+        console.log("Invalid OP!");
+        resetCalculator();
     } else {
         switch(op) {
             case "add":
