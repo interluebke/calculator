@@ -3,43 +3,43 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale = 1.0">
-        <script src="src/script.js"></script>
+        <script src="src/script.js" defer></script>
         <link rel="stylesheet" href="styles/styles.css">
         <title>Calculator</title>
     </head>
     <body>
         <div class="calculator">
             <div class="top-bar">
-                <p>0</p>
+                <p id="display">0</p>
             </div>
             
             <div class="buttons">
                 <div class="col">    
                     <button class="btn op" id="add">+</button>
-                    <button class="btn num" id="seven">7</button>
-                    <button class="btn num" id="four">4</button>
-                    <button class="btn num" id="one">1</button>
-                    <button class="btn num" id="zero">0</button>
+                    <button class="btn num" id="7">7</button>
+                    <button class="btn num" id="4">4</button>
+                    <button class="btn num" id="1">1</button>
+                    <button class="btn num" id="0">0</button>
                 </div>
 
                 <div class="col">
                     <button class="btn op" id="subtract">-</button>
-                    <button class="btn num" id="eight">8</button>
-                    <button class="btn num" id="five">5</button>
-                    <button class="btn num" id="two">2</button>
+                    <button class="btn num" id="8">8</button>
+                    <button class="btn num" id="5">5</button>
+                    <button class="btn num" id="2">2</button>
                     <button class="btn num" id="decimal">.</button>
                 </div>
 
                 <div class="col">
                     <button class="btn op" id="multiply">x</button>
-                    <button class="btn num" id="nine">9</button>
-                    <button class="btn num" id="six">6</button>
-                    <button class="btn num" id="three">3</button>
+                    <button class="btn num" id="9">9</button>
+                    <button class="btn num" id="6">6</button>
+                    <button class="btn num" id="3">3</button>
                     <button class="btn num" id="clear">AC</button>
                 </div>
 
                 <div class="col">
-                    <button class="btn op" id="divide">÷</button>
+                    <button class="btn op div" id="divide">÷</button>
                     <button class="btn calc" id="calculate">=</button>
                 </div>
             </div>
