@@ -100,10 +100,17 @@ function calculate(n1, op, n2) {
                 if (Number(n2) === 0) {
                     return "ERROR DIV/0!";
                 } else {
-                    return Number(n1) / Number(n2);
+                    let num = trunctate(Number(n1) / Number(n2));
+                    return num;
                 }
         };
     };  
 };
+
+function trunctate (num) {
+    if (num.toString().split(".")[1]?.length > 4) {
+        return Number(num.toFixed(4));
+    }
+}
 
 resetCalculator();
