@@ -13,7 +13,7 @@ function calculator() {
                 display.textContent = calculate(num1, operator, num2).toString();
             } else if (button.className === "btn op") {
                 operator = button.id;
-                display.textContent = "0";
+                display.textContent += ` ${operator} `;
             } else if (operator === undefined) {
                 num1 = appendNumbers(button.id, num1);
             } else {
@@ -23,7 +23,18 @@ function calculator() {
     });
 };
 
-
+function getOperatorSign (operator) {
+    switch(operator) {
+        case "add":
+            return "+";
+        case "subtract":
+            return "-";
+        case "multiply":
+            return "x";
+        case "divide":
+            return "÷";
+    }
+}
 
 function appendNumbers(id, n) {
     if (!isNaN(Number(id))) {
